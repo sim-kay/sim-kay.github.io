@@ -147,6 +147,8 @@
       var vsubtitle = document.getElementById('htmlSubtitle');
       var vbody = document.getElementsByClassName("pell-content")[0];
       var vlogin = document.getElementById("logmein");
+      var vtogglefeed = document.getElementById("togglefeed");
+      var vdeletepage = document.getElementById("deletepage");
 
       var vdisplayname = "";
       var vphotourl = "";
@@ -216,6 +218,16 @@
         signInWithRedirect(auth, provider);
       }
 
+      function toggleFeedStatus() {
+        console.log("Toggling feed status...")
+
+      }
+
+      function deleteThisPage() {
+        console.log("Deleting this page...")
+
+      }
+
       function showUserOnPage() {
 
         // Show user chip
@@ -279,6 +291,10 @@
             vemail = user.email;
             showUserOnPage();
 
+            // Show delete and unfeed
+            vdeletepage.classList.remove('displaynone');
+            vtogglefeed.classList.remove('displaynone');
+
           }).catch((error) => {
             // Handle Errors here.
             const errorCode = error.code;
@@ -294,7 +310,8 @@
 
       // Add event listeners
       vlogin.addEventListener("click", signInUser);
-
+      vtogglefeed.addEventListener("click", toggleFeedStatus);
+      vdeletepage.addEventListener("click", deleteThisPage);
 
 
 
@@ -317,6 +334,9 @@
         <div class="footer-col one-half">
           <h2 class="footer-heading"></h2>
           <button class="loginbutton" type="button" id="logmein">log in + edit</button>
+          <button class="loginbutton displaynone" type="button" id="togglefeed">...</button>
+          <button class="loginbutton redbutton displaynone" type="button" id="deletepage">delete</button>
+
           <div class="logincontainer">
             <div id="containerOfUser" class="usercontainer displaynone">
               <img class="userphoto" src="" id="photoOfUser">

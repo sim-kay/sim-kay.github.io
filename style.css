@@ -8,7 +8,8 @@ html{
   --accent-color: #fd4a4a;
   --accent-color-light: rgb(0 22 216 / 10%);
   --overlay-color: rgba(255, 255, 255, .8);
-  --overlay-edge-color: rgba(0, 0, 0, .08)
+  --overlay-edge-color: rgba(0, 0, 0, .08);
+  --delete-red: #ff4343;
 }
 
 .dark-only{
@@ -407,11 +408,18 @@ h5 a:hover{
   opacity: .7;
   transition: .2s;
   margin-left: -4px;
+  margin-right: 8px;
 }
 
 .loginbutton:hover{
   opacity: 1;
   transform: translateY(-2px);
+}
+
+.redbutton{
+  color: var(--background-color);
+  background-color: var(--delete-red);
+  border: 1px solid var(--overlay-edge-color);
 }
 
 .vertical{
