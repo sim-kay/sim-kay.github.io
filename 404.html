@@ -174,7 +174,7 @@
           // If no snapshot, fill values and create record.
             console.log("Creating new record.");
             vtitle.innerHTML = pageName;
-            vbody.innerHTML = "beautiful thoughts go here...<br><br><br><br><br><br><br>";
+            vbody.innerHTML = "beautiful thoughts go here...<br><br><br><br><br>";
             vbody.style.opacity = "0.5";
             vtogglefeed.innerHTML = "published";
 
@@ -201,7 +201,8 @@
         updates['posts/' + pageName + "/"] = {
           title: vtitle.innerHTML,
           subtitle: vsubtitle.innerHTML,
-          body: vbody.innerHTML
+          body: vbody.innerHTML,
+          feed: vtogglefeed.innerHTML
         };
         update(ref(db), updates);
         console.log("Update sent");
