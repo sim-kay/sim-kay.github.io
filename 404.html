@@ -169,18 +169,21 @@
             vtitle.innerHTML = snapshot.val().title;
             vsubtitle.innerHTML = snapshot.val().subtitle;
             vbody.innerHTML = snapshot.val().body;
+            vtogglefeed.innerHTML = snapshot.val().feed;
           } else {
           // If no snapshot, fill values and create record.
             console.log("Creating new record.");
             vtitle.innerHTML = pageName;
-            vbody.innerHTML = "Write something epic.<br><br><br><br><br><br><br>";
+            vbody.innerHTML = "beautiful thoughts go here...<br><br><br><br><br><br><br>";
             vbody.style.opacity = "0.5";
+            vtogglefeed.innerHTML = "published";
 
       // Create new log
             set(ref(db, 'posts/' + pageName), {
               title: vtitle.innerHTML,
               subtitle: vsubtitle.innerHTML,
-              body : vbody.innerHTML
+              body : vbody.innerHTML,
+              feed : vtogglefeed.innerHTML
             });
           }
 
@@ -214,18 +217,20 @@
     }
 
       function signInUser() {
-        console.log("Trying to sign in...")
+        console.log("Trying to sign in...");
         signInWithRedirect(auth, provider);
       }
 
       function toggleFeedStatus() {
-        console.log("Toggling feed status...")
-
+        console.log("Toggling feed status...");
+        if (vtogglefeed.innerHTML == "published"){
+          vtogglefeed.innerHTML = "hidden";
+        }
+        else vtogglefeed.innerHTML = "published";
       }
 
       function deleteThisPage() {
-        console.log("Deleting this page...")
-
+        console.log("Deleting this page...");
       }
 
       function showUserOnPage() {
@@ -292,7 +297,7 @@
             showUserOnPage();
 
             // Show delete and unfeed
-            vdeletepage.classList.remove('displaynone');
+            // vdeletepage.classList.remove('displaynone');
             vtogglefeed.classList.remove('displaynone');
 
           }).catch((error) => {
