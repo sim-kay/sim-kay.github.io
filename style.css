@@ -423,7 +423,8 @@ h5 a:hover{
 }
 
 .hidden-article{
-  opacity: .7;
+  display: none;
+  opacity: .5 !important;
 }
 
 .vertical{
