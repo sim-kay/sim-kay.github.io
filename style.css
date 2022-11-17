@@ -422,6 +422,10 @@ h5 a:hover{
   border: 1px solid var(--overlay-edge-color);
 }
 
+.hidden-article{
+  opacity: .7;
+}
+
 .vertical{
   padding-left:12px;
   display: flex;
