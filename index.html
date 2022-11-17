@@ -112,8 +112,10 @@
               "<h3 class='post-title'>" + "<a href='/" + postKey + "'>" + postData.title + "</a></h3>" +
               "<p class='post-subtitle'>" + postData.subtitle + "</p>" +
               "</div>";
-
-          document.getElementById('htmlBody').innerHTML += thisCode;
+          
+              if (postData.feed == "published") {
+                document.getElementById('htmlBody').innerHTML += thisCode;
+              }
           numposts++;
           });
 
