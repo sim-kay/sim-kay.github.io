@@ -485,8 +485,15 @@ h5 a:hover{
 }
 
 .animated {
-  -webkit-animation-duration: .3s;
-  animation-duration: .3s;
+  -webkit-animation-duration: .5s;
+  animation-duration: .5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.animated-slow{
+  -webkit-animation-duration: 1.5s;
+  animation-duration: 1.5s;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
 }
@@ -496,9 +503,13 @@ h5 a:hover{
      opacity: 0;
      -webkit-transform: translateY(20px);
   }
-  100% {
+  80% {
      opacity: 1;
-     -webkit-transform: translateY(0);
+     -webkit-transform: translateY(-3px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
   }
 }
 
@@ -507,15 +518,42 @@ h5 a:hover{
      opacity: 0;
      transform: translateY(20px);
   }
-  100% {
-     opacity: 1;
-     transform: translateY(0);
-  }
+  80% {
+    opacity: .8;
+    transform: translateY(-3px);
+ }
+ 100% {
+   opacity: 1;
+   transform: translateY(0);
+}
 }
 
 .fadeInUp {
   -webkit-animation-name: fadeInUp;
   animation-name: fadeInUp;
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+     opacity: 0;
+  }
+  100% {
+     opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+     opacity: 0;
+  }
+  100% {
+     opacity: 1;
+  }
+}
+
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
 }
 
 .tabswitcher{
